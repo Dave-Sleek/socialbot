@@ -1,1 +1,199 @@
+<!DOCTYPE html>
 
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+</head>
+
+<h3 style="text-align: center;"> Social Media Assistant Bot</h3>
+
+<body>
+
+<!--<img src="asset/Loader.gif">-->
+
+<h3 id="status" style="text-align: center;"></h3>
+
+<script> 
+
+    document.write("<center><font size=+3 style='color: green;'>");
+
+        var day = new Date();
+
+        var hr = day.getHours();
+
+        if (hr >= 0 && hr < 12) {
+
+            document.write("Good Morning!");
+
+        } else if (hr == 12) {
+
+            document.write("Good Noon!");
+
+        } else if (hr >= 12 && hr <= 17) {
+
+            document.write("Good Afternoon!");
+
+        } else {
+
+            document.write("Good Evening!");
+
+        }
+
+        document.write("</font></center>");
+
+    
+
+</script>
+
+<script>
+
+const checkOnlineStatus = async () => {
+
+try {
+
+const online = await fetch("/1pixel.png");
+
+return online.status >= 200 && online.status < 300; // either true or false
+
+} catch (err) {
+
+return false; // definitely offline
+
+}
+
+};
+
+setInterval(async () => {
+
+const result = await checkOnlineStatus();
+
+const statusDisplay = document.getElementById("status");
+
+statusDisplay.textContent = result ? "You are Online" : "You are OFFline";
+
+}, 3000); // probably too often, try 30000 for every 30 seconds
+
+// forgot to include async load event listener in the video!
+
+window.addEventListener("load", async (event) => {
+
+const statusDisplay = document.getElementById("status");
+
+statusDisplay.textContent = (await checkOnlineStatus())
+
+? "Online"
+
+: "OFFline";
+
+});
+
+</script>
+
+<script type="text/javascript">
+
+  alert("Hi welcome, I'm a robot!😊");
+
+  alert("I don't have name! ☺️");
+
+  let robot = prompt('Give me a name!');
+
+  alert("Wow, I love that name, "+ robot+" 🤖");
+
+  alert(robot+ ", What's your own Name?");
+
+  let name = prompt(' Tell me your name');
+
+  alert("Wow that's a nice: "+ name+" 😍❤️");
+
+  alert("What social media handle do you want to visit: "+name+" 🤔");
+
+  let social = prompt('facebook(fb), twitter(tw), instagram(ig), whatsapp(wa). Use the shortcut');
+
+  if(social =='fb'){
+
+    alert('Yes open Facebook');
+
+      function Redirect() {
+
+               window.location = "https://www.facebook.com";
+
+            }            
+
+            alert("You will be redirected to Facebook in 10 sec.");
+
+             document.write("<img src='asset/Loader.gif'>");
+
+            setTimeout('Redirect()', 10000);
+
+  }else{
+
+  if(social =='ig'){
+
+    alert('Yes open Instagram');
+
+            function Redirect() {
+
+            window.location = "https://www.instagram.com";
+
+            }
+
+            alert("You will be redirected to Instagram in 10 sec.");
+
+             document.write("<img src='asset/Loader.gif'>");
+
+            setTimeout('Redirect()', 10000);
+
+            
+
+        }else if(social =='tw'){
+
+          alert('Yes open Twitter');
+
+         function Redirect() {
+
+         window.location = "https://www.twitter.com";
+
+         }
+
+         alert("You will be redirected to Twitter in 10 sec.");
+
+          document.write("<img src='asset/Loader.gif'>");
+
+         setTimeout('Redirect()', 10000);
+
+        }else if(social == 'wa'){
+
+          alert('Yes open WhatsApp');
+
+        function Redirect() {
+
+        window.location = "https://www.api.whatsapp.com";
+
+        }
+
+        alert("You will be redirected to WhatsApp in 10 sec.");
+
+         document.write("<img src='asset/Loader.gif'>");
+
+        setTimeout('Redirect()', 10000);
+
+        }else{
+
+          alert('App not listed');
+
+        }
+
+  }
+
+</script>
+
+</body>
+
+</html>

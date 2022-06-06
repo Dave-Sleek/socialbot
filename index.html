@@ -70,7 +70,7 @@
 
   alert("What social media handle do you want to visit: "+name+" 🤔");
 
-  let social = prompt('facebook(fb), twitter(tw), instagram(ig), whatsapp(wa). Use the shortcut');
+  let social = prompt('facebook(fb), twitter(tw), instagram(ig), whatsapp(wa), linkedin(ld). Use the shortcut');
 
   if(social =='fb'){
 
@@ -108,7 +108,7 @@
 
             
 
-        }else if(social =='tw'){
+   }else if(social =='tw'){
 
           alert('Yes open Twitter');
 
@@ -124,13 +124,13 @@
 
          setTimeout('Redirect()', 10000);
 
-        }else if(social == 'wa'){
+ }else if(social == 'wa'){
 
           alert('Yes open WhatsApp');
 
         function Redirect() {
 
-        window.location = "https://api.whatsapp.com";
+        window.location = "https://web.whatsapp.com";
 
         }
 
@@ -140,9 +140,21 @@
 
         setTimeout('Redirect()', 10000);
 
-        }else{
+        }else if(social == 'li'){
 
-          alert('App not listed');
+          alert('Yes open LinkedIn');
+
+        function Redirect() {
+
+        window.location = "https://www.linkedin.com";
+
+        }
+
+        alert("You will be redirected to LinkedIn in 10 sec.");
+
+         document.write("<img src='asset/Loader.gif'>");
+
+        setTimeout('Redirect()', 10000);
 
         }
 
